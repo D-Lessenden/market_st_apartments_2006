@@ -11,6 +11,7 @@ attr_reader :number, :monthly_rent, :bathrooms, :bedrooms, :renter
 
   def add_renter(name)
     @renter << name
+    
   end
 
 end
