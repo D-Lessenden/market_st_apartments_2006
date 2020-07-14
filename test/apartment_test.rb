@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/apartment'
+require './lib/renter'
 require 'pry'
 
 class ApartmentTest < Minitest::Test
@@ -23,6 +24,12 @@ class ApartmentTest < Minitest::Test
 
   def test_number_of_bedrooms
     assert_equal 1, @unit1.bedrooms
+  end
+
+  def test_add_renter
+    @renter1 = Renter.new("Jessie")
+    @unit1.add_renter(@renter1)
+    assert_equal [@renter1], @unit1.renter 
   end
 
 end
